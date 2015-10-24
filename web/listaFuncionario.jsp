@@ -23,20 +23,15 @@
             <fieldset>
                 <p>nome: <input type="text" name="tnome" id="cnome"/></p><br>
                 <p>sobrenome:<input type="text" name="tsobrenome" id="csobrenome"/></p><br>
-                <input type="submit" value="Enviar"/>   
+                <input type="submit" value="salvar"/>   
             </fieldset>
         </form>
         <h1>LISTA FUNCIONARIOS</h1>
         <table border="0">
             <tr> 
                 <td>ID</td><td>Nome</td><td>Sobrenome</td><td>Excluir</td><td>Editar</td>
-                <td>  
-                    <form  method="get" action="stvManterTurma">  
-                        <input type="hidden" name="hdAcao" value="ExcluirTurma"/>  
-                        <input type="hidden" name="codExcluir" value="${item.id}"/>  
-                        <button type="submit"  style=" border:0px; background-image:url('img/excluir.gif'); width: 32px; height: 32px;"/>  
-                    </form>  
-                </td>  
+                
+               
             </tr>
             <%
                 FuncionarioDao dao = new FuncionarioDao();
