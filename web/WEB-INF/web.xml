@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+  <servlet>
+
+<servlet-name>listaFuncionario</servlet-name>
+
+<jsp-file>listaFuncionario.jsp</jsp-file>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>listaFuncionario</servlet-name>
+
+<url-pattern>/listaFuncionario</url-pattern>
+
+</servlet-mapping>
+    
+    
     <servlet>
         <servlet-name>ControlerFuncionario</servlet-name>
         <servlet-class>controler.ControlerFuncionario</servlet-class>
@@ -8,6 +26,10 @@
         <servlet-name>ListarFuncionarios</servlet-name>
         <servlet-class>controler.ListarFuncionarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExcluirFuncionario</servlet-name>
+        <servlet-class>controler.ExcluirFuncionario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControlerFuncionario</servlet-name>
         <url-pattern>/ControlerFuncionario</url-pattern>
@@ -15,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>ListarFuncionarios</servlet-name>
         <url-pattern>/ListarFuncionarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirFuncionario</servlet-name>
+        <url-pattern>/ExcluirFuncionario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

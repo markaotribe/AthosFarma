@@ -6,9 +6,7 @@
 package controler;
 
 import dao.FuncionarioDao;
-import dao.JDBCFuncionarioDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,16 +42,12 @@ public class ControlerFuncionario extends HttpServlet {
         
         String nome = request.getParameter("tnome");
         String sobrenome = request.getParameter("tsobrenome");
-        
-        System.out.println("nome");
-        
         Funcionario funcionario = new Funcionario();
         funcionario.setNome(nome);
         funcionario.setSobrenome(sobrenome);
-        
-        
-        JDBCFuncionarioDao jdbcfuncionarioDao = new JDBCFuncionarioDao();
-        jdbcfuncionarioDao.inserir(funcionario);
+        FuncionarioDao funcionarioDao = new FuncionarioDao();
+        funcionarioDao.inserir(funcionario);
+        response.sendRedirect("listaFuncionario"); 
     }
 
    
@@ -72,8 +66,8 @@ public class ControlerFuncionario extends HttpServlet {
         funcionario.setSobrenome(sobrenome);
         
         
-        JDBCFuncionarioDao jdbcfuncionarioDao = new JDBCFuncionarioDao();
-        jdbcfuncionarioDao.inserir(funcionario);
+        FuncionarioDao funcionarioDao = new FuncionarioDao();
+        funcionarioDao.inserir(funcionario);
     }
 
     

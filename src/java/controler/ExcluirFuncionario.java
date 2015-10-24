@@ -27,7 +27,8 @@ public class ExcluirFuncionario extends HttpServlet {
             int i = Integer.parseInt(id);
             FuncionarioDao funcionario = new FuncionarioDao();
             funcionario.remover(i);
-            response.sendRedirect("listarFuncionario.jsp"); 
+            response.sendRedirect("listaFuncionario"); 
+            
             
     }
 

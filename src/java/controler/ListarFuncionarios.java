@@ -6,7 +6,6 @@
 package controler;
 
 import dao.FuncionarioDao;
-import dao.JDBCFuncionarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -25,10 +24,10 @@ public class ListarFuncionarios extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       JDBCFuncionarioDao dao = new JDBCFuncionarioDao();
-       List funcionarios = dao.listar();
+       FuncionarioDao dao = new FuncionarioDao();
+       List funcionarios = dao.Listar();
        request.setAttribute("sesaofuncionarios", funcionarios);
-        RequestDispatcher rd = request.getRequestDispatcher("/listafuncionario.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/listaFuncionario.jsp");
         rd.forward(request, response);
        
         
