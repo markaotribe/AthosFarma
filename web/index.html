@@ -9,12 +9,38 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="scripts/menu.css "/>
     </head>
     <body>
-        <fieldset>
-            <a href="listaFuncionario.jsp">Cadastro</a>
-        </fieldset>
+        <div id ="topo">
+           Athos Farma
+        </div>
+        
+         <div id="logado" align="left">
+             <img src="img/login-avatar.png"/><br>
+             <p>Bem vindo!</p>
+             <h1>Dener Modesto</h1>
+                
+            </div>
+        
+        <ul id="nav">
+            <li> <a href="#">VENDAS</a>
+            <li> <a href="#">CADASTRO</a>
+                <ul>
+                    <li><a href="cadFuncionario.jsp">FUNCIONARIO</a> </li>
+                    <li><a href="#">PRODUTOS</a> </li>
+                </ul>
+            </li>
             
-         
+             <li> <a href="#">RELATORIOS</a>
+
+        </ul>
+      <div>
+      <jsp:include page="cadFuncionario.jsp" /> 
+    </div>
+        
+        <div id="rodape">
+            
+        </div>
     </body>
 </html>
