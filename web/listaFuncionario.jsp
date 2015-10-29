@@ -32,7 +32,7 @@
                 <th><%= funci.getSobrenome()%></th>
                 <input type='hidden' name='acao' value=''>
                 <th><a href="ExcluirFuncionario?acao=&id=<%= funci.getId()%>"><img src="img/excluir.gif"/></a></th> 
-                <th><a href="EditFuncionario?acao=&id=<%= funci.getId()%>=&nome=<%= funci.getNome()%> =&sobrenome=<%= funci.getSobrenome()%>"> <img src="img/src=editar.gif"/> </a></th> 
+                <th><a href="EditFuncionario?acao=&id=<%= funci.getId()%>" ><img src="editar.gif"/> </a></th> 
               
                       
             </tr>
