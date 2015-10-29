@@ -8,3 +8,74 @@ and open the template in the editor.
     Author     : VIVO
 */
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+body {
+   
+    margin: 50px;
+}
+
+#nav{
+    position: absolute;
+    top: 200px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+
+#nav li{
+    list-style: none;
+    background: #fff;
+    width: 200px;
+    border-bottom: 1px solid #666;
+}
+
+#nav li a{  
+    display: block;
+    padding: 8px;
+    border-left: 4px solid #444; 
+    text-decoration: none; 
+    box-shadow: 2px 2px 5px #ccc;
+    color:#555;
+}
+
+#nav li a:hover{ border-left: 6px solid #069; background: #f8f8f8; }
+#nav li ul{display: none;}
+#nav li:hover ul{display: block;}
+#nav li:hover ul li {background: #333;}
+#nav li:hover ul li a{color:#ccc;}
+
+    #topo{
+	width: 100%;
+	height: 50%;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #0A246A;
+	background-position:center center;
+	background-color:#f8f8f8;
+        font-size: 70px;
+}
+
+#rodape {
+	position:absolute;
+	bottom:0;
+	width:100%;
+        
+}
+
+#logado{
+    
+ float: right;
+ width: 20%;
+ padding: 5px;
+ margin: 0px 10px 10px 0;
+ top: 200px;
+  
+	
+}
+

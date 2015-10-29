@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
-  <servlet>
-
-<servlet-name>listaFuncionario</servlet-name>
-
-<jsp-file>listaFuncionario.jsp</jsp-file>
-
-</servlet>
-
-<servlet-mapping>
-
-<servlet-name>listaFuncionario</servlet-name>
-
-<url-pattern>/listaFuncionario</url-pattern>
-
-</servlet-mapping>
-    
-    
+    <servlet>
+        <servlet-name>listaFuncionario</servlet-name>
+        <jsp-file>listaFuncionario.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>EditFuncionario</servlet-name>
+        <servlet-class>controler.EditFuncionario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listaFuncionario</servlet-name>
+        <url-pattern>/listaFuncionario</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cadFuncionario</servlet-name>
+        <jsp-file>cadFuncionario.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cadFuncionario</servlet-name>
+        <url-pattern>/cadFuncionario</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>editFuncionario</servlet-name>
+        <jsp-file>editFuncionario.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editFuncionario</servlet-name>
+        <url-pattern>/editFuncionario</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>ControlerFuncionario</servlet-name>
         <servlet-class>controler.ControlerFuncionario</servlet-class>
@@ -42,6 +52,11 @@
         <servlet-name>ExcluirFuncionario</servlet-name>
         <url-pattern>/ExcluirFuncionario</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditFuncionario</servlet-name>
+        <url-pattern>/EditFuncionario</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

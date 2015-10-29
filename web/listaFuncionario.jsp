@@ -11,23 +11,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri= "http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div> CADASTRO </div>
-        <form action="ControlerFuncionario" method="get">
-            <fieldset>
-                <p>nome: <input type="text" name="tnome" id="cnome"/></p><br>
-                <p>sobrenome:<input type="text" name="tsobrenome" id="csobrenome"/></p><br>
-                <input type="submit" value="salvar"/>   
-            </fieldset>
-        </form>
+
         <h1>LISTA FUNCIONARIOS</h1>
-        <table border="0">
+          <th><a href="cadFuncionario.jsp">voltar</a></th>
+        <table border="1px" cellpadding="5px" cellspacing="0" ID="alter">
             <tr> 
                 <td>ID</td><td>Nome</td><td>Sobrenome</td><td>Excluir</td><td>Editar</td>
                 
@@ -44,9 +31,10 @@
                 <th><%= funci.getNome()%></th>
                 <th><%= funci.getSobrenome()%></th>
                 <input type='hidden' name='acao' value=''>
-                <th><a href="ExcluirFuncionario?acao=&id=<%= funci.getId()%>"><img src="img/excluir.gif"/></a></th>
-                <%=funci.getId()%></a>  
-                <th><a href="listaFuncionario.jsp"><img src="img/editar.gif"/></a></th>
+                <th><a href="ExcluirFuncionario?acao=&id=<%= funci.getId()%>"><img src="img/excluir.gif"/></a></th> 
+                <th><a href="EditFuncionario?acao=&id=<%= funci.getId()%>=&nome=<%= funci.getNome()%> =&sobrenome=<%= funci.getSobrenome()%>"> <img src="img/src=editar.gif"/> </a></th> 
+              
+                      
             </tr>
 
             <%

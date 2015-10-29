@@ -85,10 +85,40 @@ public class FuncionarioDao {
     }
    
     public Funcionario buscar(int id){
-        return null;
+        
+        try {
+            Funcionario funcionario = new Funcionario();
+            String SQL = "SELECCT * FROM funcionario WHERE id=?";
+            PreparedStatement ps = connection.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            
+            rs.next();
+            funcionario.setNome(rs.getString("nome"));
+            funcionario.setSobrenome(rs.getString("sobrenome"));
+            
+            return funcionario;
+        } catch (SQLException ex) {
+            Logger.getLogger(FuncionarioDao.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Erro ao buscar",ex);
+        }
     
     }
     public void editar(Funcionario funcionario){
+        
+        
+        try {
+            String SQL = "UPDATE funcionario SET nome=? sobrenome=? WHERE id=?";
+            PreparedStatement ps = connection.prepareStatement(SQL);
+            ps.setInt(0,funcionario.getId());
+            ps.setString(1,funcionario.getNome());
+            ps.setString(2,funcionario.getSobrenome());
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FuncionarioDao.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Falha ao atualizar JDBC",ex);
+        }
+        
             
     
 }

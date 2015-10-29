@@ -5,19 +5,18 @@
  */
 package controler;
 
-import dao.FuncionarioDao;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Funcionario;
 
 /**
  *
  * @author VIVO
  */
-public class ControlerFuncionario extends HttpServlet {
+public class EditFuncionario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,46 +30,55 @@ public class ControlerFuncionario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      
+       {  
+        String id = request.getParameter("id");
+        String nome = request.getParameter("tnome");  
+        String sobrenome = request.getParameter("tsobrenome");  
+  
+        request.setAttribute("tid",id);  
+        request.setAttribute("tnome", nome);  
+        request.setAttribute("tsobrenome", sobrenome);  
+        response.sendRedirect("editFuncionario.jsp");
+        
+  
+    }  
+  
     }
 
-    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        String nome = request.getParameter("tnome");
-        String sobrenome = request.getParameter("tsobrenome");
-        Funcionario funcionario = new Funcionario();
-        funcionario.setNome(nome);
-        funcionario.setSobrenome(sobrenome);
-        FuncionarioDao funcionarioDao = new FuncionarioDao();
-        funcionarioDao.inserir(funcionario);
-        response.sendRedirect("cadFuncionario"); 
     }
 
-   
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        String nome = request.getParameter("tnome");
-        String sobrenome = request.getParameter("tsobrenome");
-        
-        System.out.println("nome");
-        
-        Funcionario funcionario = new Funcionario();
-        funcionario.setNome(nome);
-        funcionario.setSobrenome(sobrenome);
-        
-        
-        FuncionarioDao funcionarioDao = new FuncionarioDao();
-        funcionarioDao.inserir(funcionario);
     }
 
-    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
