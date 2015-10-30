@@ -87,12 +87,14 @@ public class FuncionarioDao {
     public Funcionario buscar(int id){
         
         try {
+           
             Funcionario funcionario = new Funcionario();
-            String SQL = "SELECCT * FROM funcionario WHERE id=?";
+            String SQL = "SELECT * FROM funcionario WHERE id = ?";
             PreparedStatement ps = connection.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             
             rs.next();
+            funcionario.setId(rs.getInt("id"));
             funcionario.setNome(rs.getString("nome"));
             funcionario.setSobrenome(rs.getString("sobrenome"));
             

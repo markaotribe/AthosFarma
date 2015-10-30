@@ -20,7 +20,7 @@
         <servlet-name>cadFuncionario</servlet-name>
         <url-pattern>/cadFuncionario</url-pattern>
     </servlet-mapping>
-     <servlet>
+    <servlet>
         <servlet-name>editFuncionario</servlet-name>
         <jsp-file>editFuncionario.jsp</jsp-file>
     </servlet>
@@ -56,7 +56,6 @@
         <servlet-name>EditFuncionario</servlet-name>
         <url-pattern>/EditFuncionario</url-pattern>
     </servlet-mapping>
-    
     <session-config>
         <session-timeout>
             30

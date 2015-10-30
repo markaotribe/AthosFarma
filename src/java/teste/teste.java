@@ -25,16 +25,17 @@ public class teste {
         System.out.println("remover");
         int id = e.nextInt();
         
-        dao.remover(id);
+        dao.buscar(id);
 
-        List<Funcionario> funcionario = dao.Listar();
-        for (Funcionario funci : funcionario) {
-            
-            System.out.print(funci.getNome());
+        Funcionario funcionario = dao.buscar(id);
+         
+            System.out.print(funcionario.getId());
             System.out.println("");
-            System.out.print(funci.getSobrenome());
+            System.out.print(funcionario.getNome());
+            System.out.println("");
+            System.out.print(funcionario.getSobrenome());
 
         }
 
     }
-}
+

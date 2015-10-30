@@ -3,7 +3,8 @@
     Created on : 23/10/2015, 16:09:52
     Author     : VIVO
 --%>
-
+<html>
+    <body>
 <%@page import="dao.FuncionarioDao"%>
 <%@page import="modelo.Funcionario"%>
 <%@page import="java.util.List"%>
@@ -32,7 +33,7 @@
                 <th><%= funci.getSobrenome()%></th>
                 <input type='hidden' name='acao' value=''>
                 <th><a href="ExcluirFuncionario?acao=&id=<%= funci.getId()%>"><img src="img/excluir.gif"/></a></th> 
-                <th><a href="EditFuncionario?acao=&id=<%= funci.getId()%>" ><img src="editar.gif"/> </a></th> 
+                <th><a href="EditFuncionario?acao=&id=<%= funci.getId()%>" ><img src="img/editar.gif"/> </a></th> 
               
                       
             </tr>

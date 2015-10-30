@@ -5,12 +5,14 @@
  */
 package controler;
 
+import dao.FuncionarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Funcionario;
 
 /**
  *
@@ -30,19 +32,7 @@ public class EditFuncionario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       {  
-        String id = request.getParameter("id");
-        String nome = request.getParameter("tnome");  
-        String sobrenome = request.getParameter("tsobrenome");  
-  
-        request.setAttribute("tid",id);  
-        request.setAttribute("tnome", nome);  
-        request.setAttribute("tsobrenome", sobrenome);  
-        response.sendRedirect("editFuncionario.jsp");
         
-  
-    }  
-  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -58,6 +48,13 @@ public class EditFuncionario extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+         String id = request.getParameter("id");
+         int i = Integer.parseInt(id);
+         FuncionarioDao funcionario = new FuncionarioDao();
+         Funcionario  f = funcionario.buscar(i);
+         request.setAttribute("funcionario", f);
+         request.getRequestDispatcher("/editFuncionario.jsp").forward(request, response);
     }
 
     /**
