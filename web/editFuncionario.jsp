@@ -7,6 +7,8 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Funcionario"%>
 <%@page import="dao.FuncionarioDao"%>
+<%@page import="javax.servlet.*"%>  
+<%@page import="javax.servlet.http.*"%>  
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,12 +21,13 @@
     </head>
     <body>
         <div> EDITAR </div>
+        <c:out value="${funcionario}"/> 
         <form action="EditFuncionario" method="get" class="">
-           
+           <%= request.getParameter("nome")%>
             <fieldset>
-              <p>id: <input type="text" name="tid" id="cid" value="<%= fucionario.id%>"/></p><br>
-              <p>nome: <input type="text" name="tnome" id="cnome"value="<%= funcionario.nome%>"/></p><br>
-              <p>sobrenome:<input type="text" name="tsobrenome" id="csobrenome" value="<%= funcionario.sobrenome%>"/></p><br>
+              <p>id: <input type="text" name="tid" id="cid" value="<%= request.getParameter("id")%>"/></p><br>
+              <p>nome: <input type="text" name="tnome" id="cnome"value="<%= request.getParameter("nome")%>"/></p><br>
+              <p>sobrenome:<input type="text" name="tsobrenome" id="csobrenome" value="<%= request.getParameter("sobrenome")%>"/></p><br>
               <input type="submit" value="SALVAR"/> 
                 <th><a href="listaFuncionario.jsp">Listar Todos</a>
             </fieldset>
