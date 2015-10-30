@@ -22,11 +22,11 @@
         <form action="EditFuncionario" method="get" class="">
            
             <fieldset>
-              <p>id: <input type="text" name="tid" id="cid" value="<%= f.id%>"/></p><br>
+              <p>id: <input type="text" name="tid" id="cid" value="<%= fucionario.id%>"/></p><br>
               <p>nome: <input type="text" name="tnome" id="cnome"value="<%= funcionario.nome%>"/></p><br>
               <p>sobrenome:<input type="text" name="tsobrenome" id="csobrenome" value="<%= funcionario.sobrenome%>"/></p><br>
-                <input type="submit" value="SALVAR"/> 
-                <th><a href="listaFuncionario.jsp">Listar Todos</a></th>
+              <input type="submit" value="SALVAR"/> 
+                <th><a href="listaFuncionario.jsp">Listar Todos</a>
             </fieldset>
         </form>
 </html>
